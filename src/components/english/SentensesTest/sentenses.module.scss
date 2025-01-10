@@ -1,0 +1,66 @@
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  height: 100%;
+
+  .phraseGroup {
+    padding: 1rem;
+
+    .phrase {
+      display: flex;
+      min-width: 350px;
+      font-size: 2rem;
+      justify-content: center;
+      color: #32F951
+    }
+
+    button {
+      padding: 1em;
+      margin: 1em;
+      cursor: pointer;
+      background-color: transparent;
+      border: .2em solid #32F951;
+      border-radius: .5em;
+      color: saddlebrown;
+    }
+  }
+
+  .src,
+  .dest {
+    min-height: 50px;
+    margin: 5px;
+    padding: 5px;
+  }
+
+  .dest {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 1.5rem;
+    border: 1px dashed saddlebrown;
+
+    min-width: 450px;
+
+    div {
+      padding: 5px 5px;
+    }
+  }
+
+  .src {
+    display: flex;
+    border: 1px solid saddlebrown;
+    min-width: 450px;
+
+    div {
+      display: flex;
+      padding: 5px;
+      border-radius: 5px;
+      justify-content: center;
+      align-items: center;
+      margin: 5px 10px;
+      border: 1px solid #684933;
+      cursor: pointer;
+    }
+  }
+}

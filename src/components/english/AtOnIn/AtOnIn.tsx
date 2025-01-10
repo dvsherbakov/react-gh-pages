@@ -42,8 +42,8 @@ export const AtOnIn = () => (
       </div>
     </div>
     <div>
-      {ph.map((x) => (
-        <div>
+      {ph.map((x, idx) => (
+        <div key={idx.toString()}>
           <span>{x.pr}</span>
           <span>{x.pos}</span>
           <span>{x.descr}</span>

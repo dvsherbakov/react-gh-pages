@@ -1,8 +1,9 @@
 import "./App.css";
 import { HashRouter, Link, Outlet, Route, Routes } from "react-router-dom";
-import { EngMenu, Footer, MainMenu } from "./components";
+import { EngMenu, Footer, MainMenu, VoiceInput } from "./components";
 import React from "react";
-import { AtOnIn } from "./components/english/AtOnIn/AtOnIn";
+import {AtOnIn, EnglishPresentSimple, EnglishToBe, IrregularVerbs} from "./components/english";
+import { SentensesTest } from "./components/english";
 
 function App() {
   return (
@@ -29,6 +30,11 @@ function App() {
             <Route path="eng">
               <Route index element={<EngMenu />} />
               <Route path="AtOnIn" element={<AtOnIn />} />
+              <Route path="sentencesTest" element={<SentensesTest />} />
+              <Route path="voice-input" element={<VoiceInput />} />
+              <Route path='irregularVerbs' element={<IrregularVerbs />} />
+              <Route path='tobe' element={<EnglishToBe/>} />
+              <Route path='PresentSimple' element={<EnglishPresentSimple />} />
             </Route>
 
             <Route path="*" element={<NoMatch />} />

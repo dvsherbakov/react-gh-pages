@@ -2,7 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: consolas, serif;
+  font-family: -apple-system, "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
