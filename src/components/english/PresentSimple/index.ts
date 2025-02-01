@@ -1,2 +1,1 @@
-
-export {EnglishPresentSimple} from './EnglishPresentSimple'
+export { EnglishPresentSimple } from "./EnglishPresentSimple"

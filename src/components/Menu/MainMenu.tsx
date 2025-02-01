@@ -1,4 +1,4 @@
-import {Menu, MenuItems} from "./Menu";
+import { Menu, MenuItems } from "./Menu";
 const menuItems: MenuItems = [
   {
     title: "English",

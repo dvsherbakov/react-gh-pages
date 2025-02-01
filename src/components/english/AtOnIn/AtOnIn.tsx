@@ -4,7 +4,7 @@ const ph = [
   { pr: "On", pos: "Monday", descr: "Day" },
   { pr: "In", pos: "2024", descr: "Year" },
   { pr: "At", pos: "ten o`clock", descr: "Time" },
-  { pr: "On", pos: "a bycicle", descr: "Mode of transport" },
+  { pr: "On", pos: "a bicycle", descr: "Mode of transport" },
   { pr: "At", pos: "the office", descr: "Place" },
   { pr: "In", pos: "Summer", descr: "Season" },
   { pr: "At", pos: "the age of forty", descr: "Age" },
@@ -13,9 +13,9 @@ const ph = [
 ];
 
 export const AtOnIn = () => (
-  <div className={styles.container}>
+  <div className={ styles.container }>
     <h1>At/On/In</h1>
-    <div className={styles.btable}>
+    <div className={ styles.btable }>
       <div>
         <h2>At</h2>
         <ul>
@@ -43,7 +43,7 @@ export const AtOnIn = () => (
     </div>
     <div>
       {ph.map((x, idx) => (
-        <div key={idx.toString()}>
+        <div key={ idx.toString() }>
           <span>{x.pr}</span>
           <span>{x.pos}</span>
           <span>{x.descr}</span>

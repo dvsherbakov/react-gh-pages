@@ -1,0 +1,2 @@
+export { TableOfVerbs } from "./TableOfVerbs";
+

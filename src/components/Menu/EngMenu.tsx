@@ -7,9 +7,14 @@ const menuItems: MenuItems = [
     link: "/eng/tobe",
   },
   {
-    title:"Present simple",
+    title: "Present simple",
     description: "PS usage",
-    link:"/eng/PresentSimple",
+    link: "/eng/PresentSimple",
+  },
+  {
+    title: "Table of verbs",
+    description: "",
+    link: "/eng/verbsTable",
   },
   {
     title: "At On In",
@@ -17,9 +22,14 @@ const menuItems: MenuItems = [
     link: "/eng/AtOnIn",
   },
   {
-    title: 'Irregular verbs',
-    description: 'Irregular verbs list',
+    title: "Irregular verbs",
+    description: "Irregular verbs list",
     link: "/eng/irregularVerbs",
+  },
+  {
+    title: "Prases",
+    description: " Frequently used phrases",
+    link: "/eng/daily",
   },
   {
     title: "Voice",

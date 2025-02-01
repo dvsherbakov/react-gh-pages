@@ -1,1 +1,1 @@
-export {EnglishToBe} from './EnglishToBe'
+export { EnglishToBe } from "./EnglishToBe"

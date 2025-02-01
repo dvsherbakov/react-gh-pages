@@ -370,7 +370,7 @@ export const IrregularVerbs = () => {
     while (tmp.size < 10) {
       tmp.add(Math.round(Math.random() * irregularVerbsTable.length));
     }
-    setList(Array.from(tmp).map((x) => irregularVerbsTable[x]));
+    setList(Array.from(tmp).map((x) => irregularVerbsTable[ x ]));
   }, []);
 
   const onInput = (event: ChangeEvent<HTMLInputElement>): void => {
@@ -405,4 +405,3 @@ export const IrregularVerbs = () => {
     </div>
   );
 };
-

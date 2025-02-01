@@ -38,7 +38,7 @@ export const SentensesTest = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.phraseGroup}>
-        <div className={styles.phrase}>{phrases[marker].phrase}</div>
+        <div className={styles.phrase}>{phrases[ marker ].phrase}</div>
         <button onClick={next}>
           <FontAwesomeIcon icon={faSync} />
         </button>
@@ -57,7 +57,7 @@ export const SentensesTest = () => {
         ))}
       </div>
       <div className={styles.src}>
-        {phrases[marker].variants.map((p, idx) => (
+        {phrases[ marker ].variants.map((p, idx) => (
           <div
             key={idx.toString()}
             onDragStart={() => setWord(p)}

@@ -2,7 +2,14 @@ import "./App.css";
 import { HashRouter, Link, Outlet, Route, Routes } from "react-router-dom";
 import { EngMenu, Footer, MainMenu, VoiceInput } from "./components";
 import React from "react";
-import {AtOnIn, EnglishPresentSimple, EnglishToBe, IrregularVerbs} from "./components/english";
+import {
+  AtOnIn,
+  DailyPhrases,
+  EnglishPresentSimple,
+  EnglishToBe,
+  IrregularVerbs,
+  TableOfVerbs,
+} from "./components/english";
 import { SentensesTest } from "./components/english";
 
 function App() {
@@ -32,9 +39,11 @@ function App() {
               <Route path="AtOnIn" element={<AtOnIn />} />
               <Route path="sentencesTest" element={<SentensesTest />} />
               <Route path="voice-input" element={<VoiceInput />} />
-              <Route path='irregularVerbs' element={<IrregularVerbs />} />
-              <Route path='tobe' element={<EnglishToBe/>} />
-              <Route path='PresentSimple' element={<EnglishPresentSimple />} />
+              <Route path="irregularVerbs" element={<IrregularVerbs />} />
+              <Route path="tobe" element={<EnglishToBe />} />
+              <Route path="PresentSimple" element={<EnglishPresentSimple />} />
+              <Route path="daily" element={<DailyPhrases />} />
+              <Route path="verbsTable" element={<TableOfVerbs />} />
             </Route>
 
             <Route path="*" element={<NoMatch />} />
