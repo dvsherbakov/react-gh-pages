@@ -27,7 +27,7 @@ const phrases: Phrase[] = [
   },
 ];
 
-export const SentensesTest = () => {
+export const SentencesTest = () => {
   const [marker, setMarker] = useState<number>(0);
   const [list, setList] = useState<string[]>(["she"]);
   const [word, setWord] = useState<string | undefined>(undefined);

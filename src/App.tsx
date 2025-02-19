@@ -6,11 +6,11 @@ import {
   AtOnIn,
   DailyPhrases,
   EnglishPresentSimple,
-  EnglishToBe,
+  EnglishToBe, Intro,
   IrregularVerbs,
   TableOfVerbs,
 } from "./components/english";
-import { SentensesTest } from "./components/english";
+import { SentencesTest } from "./components/english";
 
 function App() {
   return (
@@ -37,13 +37,14 @@ function App() {
             <Route path="eng">
               <Route index element={<EngMenu />} />
               <Route path="AtOnIn" element={<AtOnIn />} />
-              <Route path="sentencesTest" element={<SentensesTest />} />
+              <Route path="sentencesTest" element={<SentencesTest />} />
               <Route path="voice-input" element={<VoiceInput />} />
               <Route path="irregularVerbs" element={<IrregularVerbs />} />
               <Route path="tobe" element={<EnglishToBe />} />
               <Route path="PresentSimple" element={<EnglishPresentSimple />} />
               <Route path="daily" element={<DailyPhrases />} />
               <Route path="verbsTable" element={<TableOfVerbs />} />
+              <Route path="intro" element={<Intro />} />
             </Route>
 
             <Route path="*" element={<NoMatch />} />
