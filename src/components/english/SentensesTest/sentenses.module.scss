@@ -2,8 +2,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 90%;
-  height: 100%;
+  width: 90%;
+  height: max-content;
+  background-color: #0c1844;
+  border-radius: 9pt;
+  padding: 1em;
 
   .phraseGroup {
     padding: 1rem;
@@ -12,8 +15,8 @@
       display: flex;
       min-width: 350px;
       font-size: 2rem;
-      justify-content: center;
-      color: #32F951
+      justify-content: left;
+      color: white;
     }
 
     button {
@@ -30,8 +33,8 @@
   .src,
   .dest {
     min-height: 50px;
-    margin: 5px;
-    padding: 5px;
+
+
   }
 
   .dest {
@@ -39,9 +42,11 @@
     flex-wrap: wrap;
     font-size: 1.5rem;
     border: 1px dashed saddlebrown;
-
+    background-color: white;
+    border-radius: 9pt;
     min-width: 450px;
-
+    padding: 5px;
+    margin: 5px;
     div {
       padding: 5px 5px;
     }
@@ -49,18 +54,38 @@
 
   .src {
     display: flex;
-    border: 1px solid saddlebrown;
     min-width: 450px;
 
     div {
       display: flex;
-      padding: 5px;
+      min-width: 3rem;
+      padding: 5px 5px 5px 0;
       border-radius: 5px;
       justify-content: center;
       align-items: center;
       margin: 5px 10px;
       border: 1px solid #684933;
       cursor: pointer;
+      background-color: white;
+    }
+  }
+  .buttonWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: flex-start;
+    button {
+      font-size: 1.5rem;
+      width: max-content;
+      padding: .5em 1.2em;
+      background-color: #bb153e;
+      border-radius: 8pt;
+      outline: none;
+      border: none;
+      transition: 1s;
+      &:active {
+        transform: scale(0.6);
+      }
     }
   }
 }

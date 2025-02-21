@@ -27,23 +27,18 @@ const phrases: Phrase[] = [
   },
 ];
 
-export const SentencesTest = () => {
-  const [marker, setMarker] = useState<number>(0);
-  const [list, setList] = useState<string[]>(["she"]);
+export const SentencesTest = (phrase: Phrase) => {
+
+  const [list, setList] = useState<string[]>([]);
   const [word, setWord] = useState<string | undefined>(undefined);
 
-  const next = () => {
-    if (marker < phrases.length - 1) setMarker((pos) => ++pos);
-  };
   return (
     <div className={styles.wrapper}>
       <div className={styles.phraseGroup}>
-        <div className={styles.phrase}>{phrases[ marker ].phrase}</div>
-        <button onClick={next}>
-          <FontAwesomeIcon icon={faSync} />
-        </button>
-
-        <div onClick={next}></div>
+        <div className={styles.phrase}>{phrase.phrase}</div>
+        {/*<button onClick={next}>*/}
+        {/*  <FontAwesomeIcon icon={faSync} />*/}
+        {/*</button>*/}
       </div>
       <div
         className={styles.dest}
@@ -57,7 +52,7 @@ export const SentencesTest = () => {
         ))}
       </div>
       <div className={styles.src}>
-        {phrases[ marker ].variants.map((p, idx) => (
+        {phrase.variants.map((p, idx) => (
           <div
             key={idx.toString()}
             onDragStart={() => setWord(p)}
@@ -66,6 +61,9 @@ export const SentencesTest = () => {
             {p}
           </div>
         ))}{" "}
+      </div>
+      <div className={styles.buttonWrapper}>
+        <button>Проверить</button>
       </div>
     </div>
   );

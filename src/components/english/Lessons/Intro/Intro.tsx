@@ -73,6 +73,9 @@ export const Intro = () => {
             </div>
           </div>
         </div>
+        <div className={styles.fab}>
+          <strong id='predicate'>Сказуемое </strong> обычно выражено действием (бегать, прыгать, любить).
+        </div>
       </div>
     </div>)
 }

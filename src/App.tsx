@@ -37,7 +37,8 @@ function App() {
             <Route path="eng">
               <Route index element={<EngMenu />} />
               <Route path="AtOnIn" element={<AtOnIn />} />
-              <Route path="sentencesTest" element={<SentencesTest />} />
+              <Route path="sentencesTest" element={<SentencesTest
+                  phrase="Я люблю тебя" variants={["you", "I", "Love"]} subsequence={[]}></SentencesTest>} />
               <Route path="voice-input" element={<VoiceInput />} />
               <Route path="irregularVerbs" element={<IrregularVerbs />} />
               <Route path="tobe" element={<EnglishToBe />} />
