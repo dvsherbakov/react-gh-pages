@@ -1,36 +1,18 @@
-import { faSync } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import styles from "./sentenses.module.scss";
+import Speech from "react-text-to-speech";
 
 export type Phrase = {
   phrase: string;
   variants: string[];
   subsequence: number[];
 };
-const phrases: Phrase[] = [
-  {
-    phrase: "Она живет в большом городе",
-    variants: [
-      "a",
-      "she",
-      "he",
-      "lives",
-      "lived",
-      "in",
-      "where",
-      "big",
-      "was",
-      "city",
-    ],
-    subsequence: [1, 3, 5, 0, 7, 9],
-  },
-];
 
 export const SentencesTest = (phrase: Phrase) => {
-
   const [list, setList] = useState<string[]>([]);
   const [word, setWord] = useState<string | undefined>(undefined);
+  const [checked, setChecked] = useState<boolean>(false);
+  const [isCorrect, setIsCorrect] = useState<boolean>(false);
 
   return (
     <div className={styles.wrapper}>
@@ -41,29 +23,69 @@ export const SentencesTest = (phrase: Phrase) => {
         {/*</button>*/}
       </div>
       <div
-        className={styles.dest}
+        className={[
+          styles.dest,
+          checked ? (isCorrect ? styles.correct : styles.incorrect) : "",
+        ].join(" ")}
         onDrop={() => {
-          setList((lst) => [...lst, word || "undo"]);
+          if (!checked) setList((lst) => [...lst, word || "undo"]);
         }}
         onDragOver={(x) => x.preventDefault()}
       >
         {list.map((s, idx) => (
-          <div key={idx.toString()}>{s}</div>
+          <div
+            className={styles.word}
+            key={idx.toString()}
+            onClick={() => {
+              setList((prev) => prev.filter((x) => x !== s));
+            }}
+            onDrop={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              const pos = list.findIndex((x) => x === s);
+              if (pos > -1 && checked) {
+                setList([
+                  ...list.slice(0, pos),
+                  word || "",
+                  ...list.slice(pos),
+                ]);
+              }
+            }}
+          >
+            {s}
+          </div>
         ))}
+        <div className={styles.speech}>
+          <Speech text={list.length ? list.join(" ") : "nothing to speech"} />
+        </div>
       </div>
       <div className={styles.src}>
         {phrase.variants.map((p, idx) => (
           <div
             key={idx.toString()}
             onDragStart={() => setWord(p)}
-            draggable={"true"}
+            draggable={!checked}
           >
             {p}
           </div>
         ))}{" "}
       </div>
       <div className={styles.buttonWrapper}>
-        <button>Проверить</button>
+        <button
+          disabled={checked}
+          onClick={() => {
+            let cnt = 0;
+            list.forEach((p, idx) => {
+              if (p === phrase.variants[phrase.subsequence[idx]]) {
+                cnt++;
+              }
+            });
+            setIsCorrect(cnt === phrase.subsequence.length);
+            setChecked(true);
+          }}
+        >
+          Проверить
+        </button>
       </div>
     </div>
   );

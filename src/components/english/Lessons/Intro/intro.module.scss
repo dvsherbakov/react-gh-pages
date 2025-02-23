@@ -123,7 +123,33 @@
           }
         }
       }
+    }
+    .testWrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding:1pt;
+      background-color: #0c1844;
+      border-radius: 5pt;
+    }
+    .buttonWrapper {
+      button {
+        background-color: #0c1844;
+        font-size: 2.8rem;
+        width: max-content;
+        padding: .6em 2em;
+        border-radius: 8pt;
+        color:whitesmoke;
+        outline: none;
+        margin: .7em 0;
+        border: none;
+        transition: 1s;
+        cursor: pointer;
 
+        &:active {
+          transform: scale(0.6);
+        }
+      }
     }
   }
 }

@@ -1,10 +1,9 @@
-import React from "react";
 import styles from "./footer.module.scss";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
   return (
-    <footer className={styles[ "footer" ]}>
+    <footer className={styles["footer"]}>
       <Link to={"/"}>
         <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48">
           <path
