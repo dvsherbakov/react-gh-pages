@@ -6,6 +6,7 @@ export type Phrase = {
   phrase: string;
   variants: string[];
   subsequence: number[];
+  onCheck?: (isCorrect: boolean) => void;
 };
 
 export const SentencesTest = (phrase: Phrase) => {
@@ -61,7 +62,7 @@ export const SentencesTest = (phrase: Phrase) => {
       </div>
       <div className={styles.src}>
         {phrase.variants.map((p, idx) => (
-          <div
+          <div className={checked?styles.checked:""}
             key={idx.toString()}
             onDragStart={() => setWord(p)}
             draggable={!checked}
@@ -82,6 +83,10 @@ export const SentencesTest = (phrase: Phrase) => {
             });
             setIsCorrect(cnt === phrase.subsequence.length);
             setChecked(true);
+            if (phrase.onCheck) {
+                console.log(cnt === phrase.subsequence.length)
+              phrase.onCheck(cnt === phrase.subsequence.length);
+            }
           }}
         >
           Проверить

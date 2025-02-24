@@ -17,6 +17,7 @@
     color: #0c1844;
     padding: 40px 25px 0 25px;
     overflow-y: scroll;
+
     &:before {
       content: '';
       position: absolute;
@@ -44,6 +45,7 @@
       background-image: radial-gradient(rgba(255, 255, 255, .5) 30%, transparent 70%);
       text-shadow: 0 0 25px #FFF, 0 0 45px #fff, 0 0 65px #fff;
       z-index: 2;
+
       &:before {
         content: '';
         position: absolute;
@@ -68,6 +70,7 @@
       text-shadow: 0 0 25px #FFF, 0 0 45px #fff, 0 0 65px #fff, 0 0 85px #fff;
       z-index: 2;
       backdrop-filter: blur(1px);
+
       &:before {
         content: '';
         position: absolute;
@@ -85,14 +88,17 @@
       color: lightyellow;
       font-size: 1.8em;
       text-align: left;
-      p{
+
+      p {
         padding: 9pt 0;
 
       }
-      strong{
+
+      strong {
         font-weight: 900;
       }
     }
+
     .tabWrapper {
       position: relative;
       display: flex;
@@ -100,38 +106,42 @@
       font-size: 1.8em;
       text-align: center;
 
-      .tab{
+      .tab {
         text-align: left;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 5pt;
+
         div {
           padding: 3pt;
           color: white;
           border-radius: 5pt;
           background-color: #0c1844;
 
-          p{
+          p {
             padding: 5pt 8pt;
             display: flex;
             flex-direction: column;
-          span {
-            strong{
-              font-weight: 900;
+
+            span {
+              strong {
+                font-weight: 900;
+              }
             }
-          }
           }
         }
       }
     }
+
     .testWrapper {
       position: relative;
       display: flex;
       flex-direction: column;
-      padding:1pt;
+      padding: 1pt;
       background-color: #0c1844;
       border-radius: 5pt;
     }
+
     .buttonWrapper {
       button {
         background-color: #0c1844;
@@ -139,16 +149,42 @@
         width: max-content;
         padding: .6em 2em;
         border-radius: 8pt;
-        color:whitesmoke;
+        color: whitesmoke;
         outline: none;
         margin: .7em 0;
         border: none;
         transition: 1s;
         cursor: pointer;
 
+        &:disabled {
+          cursor: not-allowed;
+          opacity: 0.3;
+        }
+
         &:active {
           transform: scale(0.6);
         }
+      }
+    }
+
+    .fabCenter{
+      padding: 20pt 5pt 10pt 5pt;
+      color: lightyellow;
+      font-size: 1.8em;
+      text-align: center;
+    }
+
+    .remark{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4em;
+      padding: 10pt 5pt 20pt 5pt;
+
+      span {
+        text-align: center;
+        color: whitesmoke;
       }
     }
   }

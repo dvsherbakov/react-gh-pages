@@ -1,8 +1,9 @@
 import styles from "./intro.module.scss";
 import { SentencesTest } from "../../SentensesTest/SentensesTest";
-import React from "react";
+import React, { useState } from "react";
 
 export const Intro = () => {
+  const [result, setResult] = useState<number>(0)
   return (
     <div className={styles.wrapper}>
       <div className={styles.intro}>
@@ -114,30 +115,38 @@ export const Intro = () => {
             phrase="Я люблю тебя"
             variants={["you", "I", "love"]}
             subsequence={[1, 2, 0]}
+            onCheck = {(isCorrect) => {
+              if (isCorrect) setResult(res=>res+1)
+            }}
           ></SentencesTest>
           <SentencesTest
             phrase="Мы знаем его"
             variants={["know", "we", "him"]}
             subsequence={[1, 0, 2]}
+            onCheck = {(isCorrect) => {
+              if (isCorrect) setResult(res=>res+1)
+            }}
           ></SentencesTest>
           <SentencesTest
             phrase="Они помнят ее маму"
             variants={["mother", "remember", "her", "they"]}
             subsequence={[3, 1, 2, 0]}
+            onCheck = {(isCorrect) => {
+              if (isCorrect) setResult(res=>res+1)
+            }}
           ></SentencesTest>
         </div>
-        <div className={styles.fab}>
+        <div className={styles.fabCenter}>
           <span>
             Обязательно проговорите вслух сделанные предложения и поехали дальше
           </span>
         </div>
         <div className={styles.buttonWrapper}>
-          <button>Следующий урок</button>
+          <button disabled={result<3}>Следующий урок</button>
         </div>
-        <div className={styles.fab}>
+        <div  className={styles.remark}>
           <span>
-            Следующий урок открывается при правильном выполнении заданий на 70%
-            .
+            Следующий урок открывается при правильном выполнении заданий на 70%.
           </span>
         </div>
       </div>

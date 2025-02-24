@@ -90,9 +90,13 @@
       justify-content: center;
       align-items: center;
       border: 1px solid #684933;
-      cursor: pointer;
+      cursor: grab;
       background-color: white;
       margin-right: 10pt;
+    }
+
+    .checked {
+      cursor: not-allowed;
     }
   }
 
@@ -115,6 +119,10 @@
 
       &:active {
         transform: scale(0.6);
+      }
+
+      &:disabled {
+        cursor: not-allowed;
       }
     }
   }

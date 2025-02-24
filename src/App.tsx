@@ -16,19 +16,6 @@ function App() {
   return (
     <div className="App">
       <HashRouter>
-        <nav>
-          <ul>
-            <li>
-              <Link to={"/login"}>login</Link>
-            </li>
-            <li>
-              <Link to={"/"}>home</Link>
-            </li>
-            <li>
-              <Link to={"/eng/AtOnIn"}>tst</Link>
-            </li>
-          </ul>
-        </nav>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<MainMenu />} />
