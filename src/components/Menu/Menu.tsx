@@ -11,20 +11,22 @@ export type MenuProps = {
 export const Menu = ({ menuItems }: MenuProps) => {
   const navigate = useNavigate();
   return (
-    <div className={styles.container}>
-      {menuItems.map((x: MenuItem) => (
-        <div
+    <main className={styles.wrapper}>
+      <div className={styles.container}>
+        {menuItems.map((x: MenuItem) => (
+          <div
           className={styles.menuCard}
           key={x.title}
           onClick={() => {
             navigate(x.link);
           }}
         >
-          <h1>{x.title}</h1>
-          <span>{x.description}</span>
-        </div>
+            <h1>{x.title}</h1>
+            <span>{x.description}</span>
+          </div>
       ))}
-    </div>
+      </div>
+    </main>
   );
 };
 

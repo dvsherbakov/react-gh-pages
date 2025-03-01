@@ -1,5 +1,6 @@
 import { Menu, MenuItems } from "./Menu";
 const menuItems: MenuItems = [
+  { title:"XY English", description: "Практический курс английского языка", link: "/xy" },
   {
     title: "English",
     description: "Materials for learn language",

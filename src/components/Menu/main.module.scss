@@ -1,27 +1,38 @@
-.container {
+.wrapper {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2rem;
-  justify-content: center;
-  align-items: center;
-  justify-self: center;
-  align-self: center;
+  padding: 2rem 2rem;
+  background-color: #bb153e;
+  height: 100%;
+  max-width: 500pt;
 
-  .menuCard {
-    border: 2pt solid #340845;
-    padding: 1rem;
-    border-radius: 6pt;
-    cursor: pointer;
+  .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    max-width: 500pt;
 
-    &:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 8px #6dd1ff,
+    .menuCard {
+      border: 2pt solid #340845;
+      background-color: #0c1844;
+      color: whitesmoke;
+      padding: 1rem;
+      border-radius: 6pt;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 8px #6dd1ff,
         0 0 0 6px #3535f5,
         0 0 0 5px #3e3efe,
         inset 0 0 10px rgba(12, 12, 126, 1),
         0 5px 20px rgba(0, 0, 0, .5),
         0 0 15px rgba(0, 0, 0, .2);
+      }
     }
   }
 }

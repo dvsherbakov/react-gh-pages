@@ -9,4 +9,3 @@ export { VoiceInput } from "./VoiceInput";
 export { TableOfVerbs } from "./TableOfVerbs";
 
 export { Intro } from "./Lessons"
-

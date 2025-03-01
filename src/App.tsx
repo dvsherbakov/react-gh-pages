@@ -1,6 +1,6 @@
 import "./App.css";
 import { HashRouter, Link, Outlet, Route, Routes } from "react-router-dom";
-import { EngMenu, Footer, MainMenu, VoiceInput } from "./components";
+import { EngMenu, Footer, MainMenu, VoiceInput, XYMenu } from "./components";
 import React from "react";
 import {
   AtOnIn,
@@ -33,6 +33,10 @@ function App() {
               <Route path="daily" element={<DailyPhrases />} />
               <Route path="verbsTable" element={<TableOfVerbs />} />
               <Route path="intro" element={<Intro />} />
+            </Route>
+
+            <Route path="xy">
+              <Route index element={<XYMenu />} />
             </Route>
 
             <Route path="*" element={<NoMatch />} />

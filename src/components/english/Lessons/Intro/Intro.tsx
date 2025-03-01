@@ -1,19 +1,15 @@
 import styles from "./intro.module.scss";
 import { SentencesTest } from "../../SentensesTest/SentensesTest";
 import React, { useState } from "react";
+import { Preliminary } from "../fabula";
 
 export const Intro = () => {
   const [result, setResult] = useState<number>(0)
   return (
     <div className={styles.wrapper}>
       <div className={styles.intro}>
-        <h1>Intro</h1>
-        <div className={styles.quote}>
-          “Любое знание нужно представлять себе в виде своего рода
-          семантического дерева. Убедитесь что вы прежде всего понимаете
-          фундаментальные основы – ствол и крупные ветви – прежде чем переходить
-          к листьям”.
-        </div>
+        <Preliminary caption={"Intro"} quote={"Любое знание нужно представлять себе в виде своего рода семантического дерева. Убедитесь что вы прежде всего понимаете фундаментальные основы – ствол и крупные ветви – прежде чем переходить к листьям."} />
+
         <div className={styles.fab}>
           <p>
             В английском языке, в отличие от русского, всегда есть подлежащее и
@@ -112,29 +108,29 @@ export const Intro = () => {
         </div>
         <div className={styles.testWrapper}>
           <SentencesTest
-            phrase="Я люблю тебя"
-            variants={["you", "I", "love"]}
-            subsequence={[1, 2, 0]}
-            onCheck = {(isCorrect) => {
-              if (isCorrect) setResult(res=>res+1)
-            }}
-          ></SentencesTest>
+                phrase="Я люблю тебя"
+                variants={["you", "I", "love"]}
+                subsequence={[1, 2, 0]}
+                onCheck = {(isCorrect) => {
+                  if (isCorrect) setResult(res=>res+1)
+                }}
+            ></SentencesTest>
           <SentencesTest
-            phrase="Мы знаем его"
-            variants={["know", "we", "him"]}
-            subsequence={[1, 0, 2]}
-            onCheck = {(isCorrect) => {
-              if (isCorrect) setResult(res=>res+1)
-            }}
-          ></SentencesTest>
+                phrase="Мы знаем его"
+                variants={["know", "we", "him"]}
+                subsequence={[1, 0, 2]}
+                onCheck = {(isCorrect) => {
+                  if (isCorrect) setResult(res=>res+1)
+                }}
+            ></SentencesTest>
           <SentencesTest
-            phrase="Они помнят ее маму"
-            variants={["mother", "remember", "her", "they"]}
-            subsequence={[3, 1, 2, 0]}
-            onCheck = {(isCorrect) => {
-              if (isCorrect) setResult(res=>res+1)
-            }}
-          ></SentencesTest>
+                phrase="Они помнят ее маму"
+                variants={["mother", "remember", "her", "they"]}
+                subsequence={[3, 1, 2, 0]}
+                onCheck = {(isCorrect) => {
+                  if (isCorrect) setResult(res=>res+1)
+                }}
+            ></SentencesTest>
         </div>
         <div className={styles.fabCenter}>
           <span>
@@ -153,3 +149,4 @@ export const Intro = () => {
     </div>
   );
 };
+

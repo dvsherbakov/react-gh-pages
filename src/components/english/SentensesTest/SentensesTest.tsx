@@ -19,9 +19,6 @@ export const SentencesTest = (phrase: Phrase) => {
     <div className={styles.wrapper}>
       <div className={styles.phraseGroup}>
         <div className={styles.phrase}>{phrase.phrase}</div>
-        {/*<button onClick={next}>*/}
-        {/*  <FontAwesomeIcon icon={faSync} />*/}
-        {/*</button>*/}
       </div>
       <div
         className={[
@@ -84,7 +81,6 @@ export const SentencesTest = (phrase: Phrase) => {
             setIsCorrect(cnt === phrase.subsequence.length);
             setChecked(true);
             if (phrase.onCheck) {
-                console.log(cnt === phrase.subsequence.length)
               phrase.onCheck(cnt === phrase.subsequence.length);
             }
           }}

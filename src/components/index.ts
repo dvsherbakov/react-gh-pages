@@ -3,3 +3,4 @@ export { EngMenu } from "./Menu/EngMenu";
 export { Menu } from "./Menu/Menu";
 export { MainMenu } from "./Menu/MainMenu";
 export { VoiceInput } from "./english/VoiceInput";
+export { XYMenu } from "./Menu/XYMenu"
